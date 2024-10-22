@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>UserManagementDemo</display-name>
+  <welcome-file-list>
+    <welcome-file>/views/user/list.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>UserController</display-name>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>usermanagement.controllers.UserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/</url-pattern>
+    <url-pattern>/users</url-pattern>
+    <url-pattern>/users*</url-pattern>
+  </servlet-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/views/common/error.jsp</location>
+   </error-page>
+   <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/views/common/error.jsp</location>
+   </error-page>
+   <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/views/common/error.jsp</location>
+   </error-page>
+</web-app>
